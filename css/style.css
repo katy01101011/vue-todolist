@@ -1,3 +1,50 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: darkseagreen;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+}
+
+main {
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    }
+
+header>img {
+    width: 30%;
+    margin: 1rem 0 1rem;
+}
+
+ul {
+    width: 70%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: rgb(245, 255, 245);
+}
+
+main li {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 1.4rem;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+}
+
+.text {
+    flex-grow: 1;
+    text-align: left;
+}
+
+a {
+    color: black;
 }

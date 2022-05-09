@@ -7,16 +7,45 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Title -->
-    <title>Titolo</title>
+    <title>To do list</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="img/logo_katy.jpg">
-    <!-- Style -->
+    <link rel="icon" type="image/x-icon" href="img/unnamed.jpeg">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- StyleCSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- VueJS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <i class="fas fa-baby"></i>
+    <!-- <i class="fas fa-eraser"></i> -->
+
+    <div id="root">
+        <!-- Header -->
+        <header>
+            <img src="img/logo.png" alt="Logo Boolean">
+        </header>
+        <!-- /Header -->
+
+        <!-- Main -->
+        <main>
+            <ul>
+                <!-- Creo la lista todo -->
+                <li v-for="todo in todoList">
+                    <!-- Se 'done' è vero, sbarro la scritta -->
+                    <span v-if="todo.done === true" style="text-decoration: line-through" class="text">{{ todo.text }}</span>
+                    <!-- Altrimenti scrivo cosa devo fare senza sbarrare la scritta -->
+                    <span v-else="todo.done === false" class="text">{{ todo.text }}</span>
+
+                    <!-- Elemento che fa sparire un todo al 'click' -->
+                    <a href=""><i class="fas fa-eraser"></i></a>
+                </li>
+            </ul>
+        </main>
+        <!-- /Main -->
+    </div>
 
     <script src="js/script.js"></script>
 </body>
