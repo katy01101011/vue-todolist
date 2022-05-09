@@ -13,7 +13,7 @@ const app = new Vue(
                 },
                 {
                     text: 'Seguire il recap',
-                    done: true
+                    done: false
                 },
                 {
                     text: 'Tagliare l\'erba',
@@ -26,7 +26,16 @@ const app = new Vue(
             ],
         },
         methods: {
-            
+            removeTodo: function(index) {
+                event.preventDefault();
+                this.todoList.splice(index, 1);
+            },
+
+            todoToggle: function(index) {
+                const clickedTodo = this.todoList[index];
+                clickedTodo.done = !clickedTodo.done
+                console.log(clickedTodo.done);
+            }
         }
     }
 )

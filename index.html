@@ -33,14 +33,18 @@
         <main>
             <ul>
                 <!-- Creo la lista todo -->
-                <li v-for="todo in todoList">
+                <li v-for="(todo, index) in todoList">
                     <!-- Se 'done' è vero, sbarro la scritta -->
-                    <span v-if="todo.done === true" style="text-decoration: line-through" class="text">{{ todo.text }}</span>
+                    <span class="text" @click="todoToggle(index)" v-if="todo.done === true" style="text-decoration: line-through">
+                        {{ todo.text }}
+                    </span>
                     <!-- Altrimenti scrivo cosa devo fare senza sbarrare la scritta -->
-                    <span v-else="todo.done === false" class="text">{{ todo.text }}</span>
+                    <span class="text" @click="todoToggle(index)" v-else="todo.done === false">
+                        {{ todo.text }}
+                    </span>
 
                     <!-- Elemento che fa sparire un todo al 'click' -->
-                    <a href=""><i class="fas fa-eraser"></i></a>
+                    <a @click="removeTodo(index)" href=""><i class="fas fa-eraser"></i></a>
                 </li>
             </ul>
         </main>
