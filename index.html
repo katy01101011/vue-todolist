@@ -31,6 +31,12 @@
 
         <!-- Main -->
         <main>
+            <div class="form">
+                <label for="new-todo">Inserisci un nuovo ToDo</label>
+                <input v-model="newTodo" type="text" name="new-todo" id="new-todo" placeholder="Cosa devi fare ancora?">
+                <button @click="addNewTodo(newTodo, todoList)" v-on:keyup.enter="addNewTodo(newTodo, todoList)">Aggiungi</button>
+            </div>
+
             <ul>
                 <!-- Creo la lista todo -->
                 <li v-for="(todo, index) in todoList">

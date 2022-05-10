@@ -24,6 +24,7 @@ const app = new Vue(
                     done: false
                 },
             ],
+            newTodo: '',
         },
         methods: {
             removeTodo: function(index) {
@@ -35,6 +36,16 @@ const app = new Vue(
                 const clickedTodo = this.todoList[index];
                 clickedTodo.done = !clickedTodo.done
                 console.log(clickedTodo.done);
+            },
+            addNewTodo: function(newTodo, todoList) {
+                newTodo.trim;
+                const newTodoItem = {
+                    text: newTodo,
+                    done: false
+                };
+                if (newTodo.length > 3) {
+                    todoList.push(newTodoItem)
+                }
             }
         }
     }
